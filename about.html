@@ -1,37 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About me</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
-        *{
-            margin: 0;padding: 0;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300&family=Ubuntu:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
-        body{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
+
+        ::-webkit-scrollbar {
+            width: 3px;
         }
-        h2{
-            font-size: 65px;
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #8888886b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050505;
+        }
+
+        .thing {
+            background: linear-gradient(0deg, rgba(7, 7, 7, 0) 0%, #070707 100%);
+            flex: none;
+            height: 100px;
+            left: calc(50.00000000000002% - 100% / 2);
+            overflow: visible;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .thing2 {
+            background: linear-gradient(0deg, #050505 0%, rgba(5, 5, 5, 0) 100%);
+            bottom: 0;
+            flex: none;
+            height: 100px;
+            left: calc(50.00000000000002% - 100% / 2);
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .card {
+            /* background-color: #fff; */
+            min-height: 75vh;
+            position: relative;
+            margin-top: 20vh;
+            width: 400px;
+        }
+
+        .sec {
+            /* border: 2px solid red; */
+            align-items: flex-start;
+            display: flex;
+            flex: 1 0 0px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 8px;
+            height: min-content;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .single {
+            display: flex;
+            align-items: end;
+        }
+
+        .single .img {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+        }
+
+        .single img {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+        }
+
+        .message {
+
+            margin-left: 5px;
+            max-width: 100%;
+            /* height: 100px; */
+            border: 1px solid rgba(255, 255, 255, .04);
+            background-color: #fafcff14;
+            border-radius: 20px 20px 20px 5px;
+            padding: 10px;
+            min-width: 10%;
+        }
+
+        .message p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 25px;
+        }
+
+        .seen {
+            background-color: #05050500;
+            flex: none;
+            height: 4vh;
+            overflow: hidden;
+            position: relative;
+            /* margin-top: -30px; */
+            FONT-VARIANT: 100px;
+            width: 90%;
+            color: grey;
+            padding: 0 35px;
+        }
+
+        span,
+        a {
+            transition: .5s;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        span:hover,
+        a:hover {
+            color: #8ed9eb;
+            text-decoration: underline;
+        }
+
+        .links {
+            width: 100%;
+            margin-left: 5px;
+            padding: 20px;
+        }
+        .links .layer{
+            background-color: #fafcff14;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .links .link {
+            background-color: #4a4a4a;
+            border-top: 2px solid #9D9D9D;
+            height: 100px;
+            width: 95%;
+            border-radius: 10px;
+            display: flex;
+        }
+
+        .links .link img {
+            border-radius: 10px 0 0 10px;
+        }
+        .links .link .right{
+            padding: 8px;
+
+        }
+        .links .link .right p{
+            line-height: 22px;
+            font-size: 11px;
+        }
+        .empty{
+            height: 10vh;
+            position: relative;
+            
         }
     </style>
 </head>
+
 <body>
-    <h2>Hello MotherFuck*r</h2>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
+    <div class="thing"></div>
+    <div class="card">
+        <div class="all">
+
+
+            <div class="sec">
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p>Hey,</p>
+                    </div>
+                </div>
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p>I'm Yatharth Negi!</p>
+                    </div>
+                </div>
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p>As a UI UX Designer with 2 years of experience, I posses a range of skills such as
+                            proficiency in design software like
+                            <span>Adobe Photoshop</span>, <span>Illustrator</span>, <span>Xd</span>, <span>Figma</span>
+                            , <span>Aftereffects & Premiere Pro</span> with a keen eye for
+                            aesthetics and a talent for visual communication.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="sec">
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p> In addition to technical skills, I have experience with branding, typography, layout design
+                            and much more. With abilities enable me to bring concepts to life and effectively
+                            communicate messages to audiences through various forms of media
+                        </p>
+                    </div>
+                </div>
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p>I have honed my skills in creating visually appealing designs that effectively communicate
+                            the intended message.
+                        </p>
+                    </div>
+                </div>
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p>Throughout my career, I have worked on various projects ranging from branding and advertising
+                            to web and print design. I have collaborated with clients from diverse industries,
+                            understanding their requirements and providing them with innovative design solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="sec">
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p>
+                            My creativity, attention to detail, and strong communication skills enable me to effectively
+                            convey ideas and concepts to clients and team members. I am a proactive problem-solver and
+                            can work efficiently under tight deadlines and pressure.
+                        </p>
+                    </div>
+                </div>
+                <div class="seen">
+                    <p>Seen</p>
+                </div>
+
+
+            </div>
+
+            <div class="sec">
+                <div class="single">
+                    <div class="img">
+                        <img src="image/my.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p>
+                            Say hello on <a href="https://www.linkedin.com/in/yatharthnegi">Linkedin</a>, email or over
+                            a coffee.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <div class="layer">
+                        <div class="link">
+                            <div class="left">
+                                <img src="image/my.jpg" alt="">
+                            </div>
+                            <div class="right">
+                                <a href="https://www.linkedin.com/in/yatharthnegi"><p style="color: #E8E8E8;">www.linkedin.com</p></a>
+                                <a href="https://www.linkedin.com/in/yatharthnegi"><p style="color: #BDBDBD; width: 80%;">https://www.linkedin.com/in/<br>yatharthnegi</p></a>
+                                <a href="https://www.linkedin.com/in/yatharthnegi"><p style="color: #888888;">www.linkedin.com</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="empty"></div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="thing2"></div>
 </body>
+
 </html>
