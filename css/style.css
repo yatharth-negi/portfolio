@@ -76,3 +76,9 @@ main .line:hover .img img{
     
     display: block;
 }
+@media (max-width:991px) {
+    .line .right p:nth-child(1){
+        display: none;
+    }
+    
+}
