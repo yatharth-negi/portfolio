@@ -171,6 +171,7 @@ main .line .img {
     transform: translate(-50%, -50%);
     /* border: 2px solid red; */
     height: 75vh;
+    z-index: 9999999999;
     /* width: 75vw; */
 }
 
@@ -179,10 +180,12 @@ main .line .img img {
     height: 100%;
     width: 100%;
     object-fit: contain;
+    z-index: 9999999999;
 }
 
 main .line:hover .img img {
     display: block;
+    z-index: 9999999999;
 }
 
 
