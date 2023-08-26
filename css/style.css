@@ -1,33 +1,123 @@
-*{
-    margin: 0;padding: 0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-p{
+.custom-cursor {
+    position: fixed;
+    width: 75px; /* Adjust the size of the cursor */
+    height: 75px;
+    background: url('image/hover.png') no-repeat;
+    background-size: cover;
+    pointer-events: none; /* Ensure the cursor doesn't interfere with interactions */
+    z-index: 9999; /* Make sure the cursor appears on top of other elements */
+    transform-origin: center; /* Rotate around the center */
+    display: none; /* Initially hide the custom cursor */
+    animation: rotate 2s infinite; /* Initially hide the cursor */
+}
+@keyframes rotate {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+  
+}
+  
+  /* Define a small dot for the default cursor */
+  html {
+    cursor: url('image/black.png'), auto;
+  }
+p {
     margin: 0 !important;
 }
-nav{
+
+nav {
+    position: relative;
     padding: 10px;
-    /* border: 2px solid red; */
     display: flex;
+    width: 100%;
     justify-content: space-between;
+    animation: navani 2s;
+    z-index: 100000;
+    height: 50px;
+}
+nav .left, nav .right{
+    width: 50%;
+    height: 50px;
+    display: flex;
     align-items: center;
 }
 nav a{
+    display: flex;
+}
+nav .left a{
+    position: relative;
+    left: 1%;
+    animation: navimg 1s ease-in-out;
+    /* transform: translateX(-50%); */
+}
+@keyframes navimg {
+    0%{
+        left: 88%;
+    }
+    50%{
+        left: 88%;
+    }
+    
+    100%{
+        left: 1%;
+    }
+}
+nav .right a{
+    position: relative;
+    left: 90%;
+    animation: navabout 1s ease-in-out;
+    /* transform: translateX(-50%); */
+}
+@keyframes navabout {
+    0%{
+        left: 2%;
+    }
+    50%{
+        left: 2%;
+    }
+    100%{
+        left: 90%
+    }
+}
+
+
+@keyframes navani {
+    0% {
+        
+        height: 100vh;
+        background-color: #fff;
+        z-index: 1000;
+    }
+
+
+    100% {
+        height: 100px;
+    }
+}
+
+nav a {
     color: #000;
     text-decoration: none;
 }
-nav #about:hover{
-    border-bottom: 1px solid #000;
-}
-main{
+
+main {
     position: absolute;
     top: 50%;
     height: 50vh;
     width: 100vw;
     overflow: scroll;
 }
-main .line{
+
+main .line {
     margin: 0 10px;
     padding: 0 3px;
     height: 35px;
@@ -37,15 +127,30 @@ main .line{
     flex-direction: row;
     border-bottom: 1px solid #000;
     cursor: pointer;
+    position: relative;
+    right: 0%;
+    animation: maxi 2s;
 }
-main .line:nth-child(1){
+
+@keyframes maxi {
+    0%{
+        right: 100%;
+    }
+    100%{
+        right: 0%;
+    }
+    
+}
+main .line:nth-child(1) {
     border-top: 1px solid #000;
 }
-main .line .left{
+
+main .line .left {
     /* width: 25%; */
     padding: 0 10px;
 }
-main .line .right{
+
+main .line .right {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,32 +158,43 @@ main .line .right{
     padding-right: 10px;
 
 }
-main .line:hover .left{
+
+main .line:hover .left {
     background-color: #000;
     color: #fff;
 }
-main .line .img{
+
+main .line .img {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     /* border: 2px solid red; */
     height: 75vh;
     /* width: 75vw; */
 }
-main .line .img img{
-        display: none;
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
+
+main .line .img img {
+    display: none;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
-main .line:hover .img img{
-    
+
+main .line:hover .img img {
     display: block;
 }
+
+
 @media (max-width:991px) {
-    .line .right p:nth-child(1){
+    .line .right p:nth-child(1) {
         display: none;
     }
-    
+
 }
+
+
+
+
+
+
