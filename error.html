@@ -1,11 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="image/fav.png">
     <title>About me</title>
+      <link rel="icon" href="image/fav.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300&family=Ubuntu:wght@500&display=swap');
@@ -19,7 +21,7 @@
 
         html {
             scroll-behavior: smooth;
-            cursor: url('image/black.png'), auto;
+            cursor: url('image/white.png'), auto;
 
         }
 
@@ -28,8 +30,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
-
+        a{
+            position: absolute;
+            top: 20%;
+            left: 60%;
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+        }
         
     </style>
 </head>
@@ -38,6 +49,8 @@
   <lottie-player
   src="https://lottie.host/f2fe151e-6a3f-4a1c-9164-ec4b21dc649c/y7SWbo8G60.json"
   background="Transparent" speed="1" style=" width: 25%;" direction="1" mode="normal" loop autoplay></lottie-player>
+  <a href="index.html">
+    <i class="ri-close-line"></i></a>
 </body>
 
 </html>
