@@ -260,6 +260,16 @@
       </div>
 
 
+      <div id="hover-title" class="line">
+        <div  class="left">Mockup Video</div>
+        <div class="right">
+          <p>Adobe Illustrator</p>
+          <p>2023</p>
+        </div>
+        <div class="img">
+          <video id="hover-video" muted loop><source src="image/mockup.mp4" type="video/mp4"></video>
+        </div>
+      </div>
 
       
 
@@ -269,7 +279,21 @@
 
 
 
+  <script>
+    const hoverTitle = document.getElementById('hover-title');
+const hoverVideo = document.getElementById('hover-video');
 
+hoverTitle.addEventListener('mouseenter', () => {
+  hoverVideo.style.display = 'block';
+  hoverVideo.play();
+});
+
+hoverTitle.addEventListener('mouseleave', () => {
+  hoverVideo.style.display = 'none';
+  hoverVideo.pause();
+});
+
+  </script>
 
 
 
