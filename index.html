@@ -9,28 +9,36 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <style>
-      .custom-cursor {
-        left: -100px;
-        top: -100px;
+  <style>
+    .custom-cursor {
+      left: -100px;
+      top: -100px;
       position: fixed;
-      width: 70px; /* Adjust the size of the cursor */
+      width: 70px;
+      /* Adjust the size of the cursor */
       height: 70px;
       background: url('image/hover.png') no-repeat;
       background-size: cover;
-      pointer-events: none; /* Ensure the cursor doesn't interfere with interactions */
-      z-index: 9999; /* Make sure the cursor appears on top of other elements */
-      transform-origin: center; /* Rotate around the center */
-      display: none; /* Initially hide the custom cursor */
+      pointer-events: none;
+      /* Ensure the cursor doesn't interfere with interactions */
+      z-index: 9999;
+      /* Make sure the cursor appears on top of other elements */
+      transform-origin: center;
+      /* Rotate around the center */
+      display: none;
+      /* Initially hide the custom cursor */
     }
-    *{
-      
+
+    * {
+
       cursor: url('image/black.png'), auto;
     }
+
     html {
       cursor: url('image/black.png'), auto;
     }
-    #backimg{
+
+    #backimg {
       position: absolute;
       right: -15%;
       width: 100vw;
@@ -38,10 +46,11 @@
       transition: 100s;
       filter: blur(5px);
     }
-    body{
+
+    body {
       overflow: hidden;
     }
-    </style>
+  </style>
 </head>
 
 <body>
@@ -58,7 +67,7 @@
     </div>
   </nav>
 
-<img id="backimg" src="image/computer.png" alt="">
+  <img id="backimg" src="image/computer.png" alt="">
   <main>
     <div class="content">
 
@@ -92,6 +101,20 @@
 
 
 
+      <!-- <div class="line">
+        <div class="left">Login Page</div>
+        <div class="right">
+          <p>Figma</p>
+          <p>2022</p>
+        </div>
+        <div class="img">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ee9654176977137.64ce219a8f406.png"
+            alt="">
+        </div>
+      </div> -->
+
+
+
       <div class="line">
         <div class="left">Banner Design</div>
         <div class="right">
@@ -109,7 +132,7 @@
         <div class="left">Restaurant Menu Design</div>
         <div class="right">
           <p>PhotoShop, Illustrator</p>
-          <p>2023</p>
+          <p>2022</p>
         </div>
         <div class="img">
           <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/6ca7ac169213829.6448e803c52db.png" alt="">
@@ -192,7 +215,7 @@
         <div class="left">Nature's Graph Logo</div>
         <div class="right">
           <p>Illustrator</p>
-          <p>2022</p>
+          <p>2023</p>
         </div>
         <div class="img">
           <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/503734169213829.6488473616295.png"
@@ -254,24 +277,38 @@
           <p>2023</p>
         </div>
         <div class="img">
-          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/322ddc178739389.64ed9d60c62a2.png"
-            alt="">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/322ddc178739389.64ed9d60c62a2.png" alt="">
         </div>
       </div>
 
 
       <div id="hover-title" class="line">
-        <div  class="left">Mockup Video</div>
+        <div class="left">Mockup Video Animation</div>
         <div class="right">
-          <p>Adobe Illustrator</p>
+          <p>After effects, Illustrator, premiere</p>
           <p>2023</p>
         </div>
         <div class="img">
-          <video id="hover-video" muted loop><source src="image/mockup.mp4" type="video/mp4"></video>
+          <video id="hover-video" muted loop>
+            <source src="image/mockup.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
-      
+      <div id="hover-title2" class="line">
+        <div class="left">Music Video Animation</div>
+        <div class="right">
+          <p>After effects, Illustrator, premiere</p>
+          <p>2023</p>
+        </div>
+        <div class="img">
+          <video id="hover-video2" muted loop>
+            <source src="image/music.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+
 
     </div>
   </main>
@@ -279,19 +316,80 @@
 
 
 
+
+
+
+
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const lineContainers = document.querySelectorAll(".line");
+
+  lineContainers.forEach((lineContainer) => {
+    const imageContainer = lineContainer.querySelector(".img");
+    const image = imageContainer.querySelector("img");
+
+    imageContainer.addEventListener("click", () => {
+      const lightboxContainer = document.createElement("div");
+      lightboxContainer.classList.add("lightbox-container");
+
+      const lightboxImage = document.createElement("img");
+      lightboxImage.src = image.src;
+      lightboxImage.classList.add("lightbox-image");
+
+      const closeLightboxButton = document.createElement("button");
+      closeLightboxButton.classList.add("lightbox-close-button");
+      closeLightboxButton.innerText = "Close";
+      closeLightboxButton.style.zIndex = "9999"; // Set a higher z-index
+
+      lightboxContainer.appendChild(lightboxImage);
+      lightboxContainer.appendChild(closeLightboxButton);
+
+      document.body.appendChild(lightboxContainer);
+
+      // Close the lightbox when clicking the close button
+      closeLightboxButton.addEventListener("click", () => {
+        document.body.removeChild(lightboxContainer);
+      });
+    });
+  });
+});
+
+ </script>
+
+
+
+
+
   <script>
     const hoverTitle = document.getElementById('hover-title');
-const hoverVideo = document.getElementById('hover-video');
+    const hoverVideo = document.getElementById('hover-video');
 
-hoverTitle.addEventListener('mouseenter', () => {
-  hoverVideo.style.display = 'block';
-  hoverVideo.play();
-});
+    hoverTitle.addEventListener('mouseenter', () => {
+      hoverVideo.style.display = 'block';
+      hoverVideo.play();
+    });
 
-hoverTitle.addEventListener('mouseleave', () => {
-  hoverVideo.style.display = 'none';
-  hoverVideo.pause();
-});
+    hoverTitle.addEventListener('mouseleave', () => {
+      hoverVideo.style.display = 'none';
+      hoverVideo.pause();
+    });
+
+
+    const hoverTitle2 = document.getElementById('hover-title2');
+    const hoverVideo2 = document.getElementById('hover-video2');
+
+    hoverTitle2.addEventListener('mouseenter', () => {
+      hoverVideo2.style.display = 'block';
+      hoverVideo2.play();
+    });
+
+    hoverTitle2.addEventListener('mouseleave', () => {
+      hoverVideo2.style.display = 'none';
+      hoverVideo2.pause();
+    });
+
+
+
 
   </script>
 
@@ -350,7 +448,7 @@ hoverTitle.addEventListener('mouseleave', () => {
 
 
 
-  
+
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
