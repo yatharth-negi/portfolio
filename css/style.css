@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 ::-webkit-scrollbar {
     width: 0px;
 }
@@ -17,32 +18,43 @@
 ::-webkit-scrollbar-thumb {
     background: none;
 }
+
 .custom-cursor {
     position: fixed;
-    width: 75px; /* Adjust the size of the cursor */
+    width: 75px;
+    /* Adjust the size of the cursor */
     height: 75px;
     background: url('image/hover.png') no-repeat;
     background-size: cover;
-    pointer-events: none; /* Ensure the cursor doesn't interfere with interactions */
-    z-index: 9999; /* Make sure the cursor appears on top of other elements */
-    transform-origin: center; /* Rotate around the center */
-    display: none; /* Initially hide the custom cursor */
-    animation: rotate 2s infinite; /* Initially hide the cursor */
+    pointer-events: none;
+    /* Ensure the cursor doesn't interfere with interactions */
+    z-index: 9999;
+    /* Make sure the cursor appears on top of other elements */
+    transform-origin: center;
+    /* Rotate around the center */
+    display: none;
+    /* Initially hide the custom cursor */
+    animation: rotate 2s infinite;
+    /* Initially hide the cursor */
+    transform: translate(-50%, -50%);
 }
+
 @keyframes rotate {
-  0%{
-      transform: rotate(0deg);
-  }
-  100%{
-      transform: rotate(360deg);
-  }
-  
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
 }
-  
-  /* Define a small dot for the default cursor */
-  html {
+
+/* Define a small dot for the default cursor */
+html {
     cursor: url('image/black.png'), auto;
-  }
+}
+
 p {
     margin: 0 !important;
 }
@@ -57,55 +69,71 @@ nav {
     z-index: 100000;
     height: 50px;
 }
-nav .left, nav .right{
+
+nav .left,
+nav .right {
     width: 50%;
     height: 50px;
     display: flex;
     align-items: center;
 }
-nav a{
+
+nav a {
     display: flex;
 }
-nav .left a{
+
+nav .left a {
     position: relative;
     left: 1%;
     animation: navimg 1s ease-in-out;
     /* transform: translateX(-50%); */
 }
+
 @keyframes navimg {
-    0%{
+    0% {
         left: 88%;
+        /* opacity: 0; */
     }
-    50%{
+
+    50% {
         left: 88%;
+        /* opacity: .5; */
     }
-    
-    100%{
+
+    100% {
         left: 1%;
+        /* opacity: 1; */
     }
 }
-nav .right a{
+
+nav .right a {
     position: relative;
     left: 90%;
     animation: navabout 1s ease-in-out;
     /* transform: translateX(-50%); */
 }
+
 @keyframes navabout {
-    0%{
+    0% {
         left: 2%;
+        /* opacity: 0; */
     }
-    50%{
+
+    50% {
         left: 2%;
+        /* opacity: 0.5; */
     }
-    100%{
-        left: 90%
+
+    100% {
+        left: 90%;
+        /* opacity: 1; */
     }
 }
 
 
 @keyframes navani {
     0% {
-        
+
         height: 100vh;
         background-color: #fff;
         z-index: 1000;
@@ -145,14 +173,16 @@ main .line {
 }
 
 @keyframes maxi {
-    0%{
+    0% {
         right: 100%;
     }
-    100%{
+
+    100% {
         right: 0%;
     }
-    
+
 }
+
 main .line:nth-child(1) {
     border-top: 1px solid #000;
 }
@@ -187,7 +217,8 @@ main .line .img {
     /* width: 75vw; */
 }
 
-main .line .img img,video {
+main .line .img img,
+video {
     display: none;
     height: 100%;
     width: 100%;
@@ -208,6 +239,51 @@ main .line:hover .img img {
 
 }
 
-video{
-    display:none;
+video {
+    display: none;
+}
+
+
+
+
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: opacity 1s; */
+    animation-duration: 4s;
+    z-index: 9999999999;
+}
+
+#lottie-container {
+    width: 100%;
+    height: 100%;
+}
+
+#website-content {
+    opacity: 0;
+    display: block;
+    /* Add other styles as needed */
+}
+
+@keyframes madhu {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+    
+}
+
+.line.active .img img {
+    display: block;
+    z-index: 9999999999;
 }
