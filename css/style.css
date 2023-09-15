@@ -282,8 +282,3 @@ video {
     }
     
 }
-
-.line.active .img img {
-    display: block;
-    z-index: 9999999999;
-}
