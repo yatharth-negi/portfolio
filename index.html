@@ -9,9 +9,12 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
-  
   <style>
+    body{
+      background-color: #d3d3d3;
+    }
     .custom-cursor {
       left: -100px;
       top: -100px;
@@ -42,11 +45,19 @@
 
     #backimg {
       position: absolute;
-      right: -15%;
-      width: 100vw;
-      height: 175vh;
-      transition: 100s;
-      filter: blur(5px);
+      transition: 5s;
+      top: -100px;
+      right: 0;
+      width: 100%;
+      animation: maxine 2s;
+    }
+    @keyframes maxine {
+      0%{
+        top: 100%;
+      }
+      100%{
+        top: -100px;
+      }
     }
 
     body {
@@ -75,7 +86,7 @@
       </div>
     </nav>
 
-    <img id="backimg" src="image/computer.png" alt="">
+    <img id="backimg" src="image/left.jpg" alt="">
     <main>
       <div class="content">
 
@@ -316,17 +327,6 @@
           </div>
         </div>
 
-        
-        <div class="line">
-          <div class="left">Music Production Logo</div>
-          <div class="right">
-            <p>Illustrator, Photoshop</p>
-            <p>2023</p>
-          </div>
-          <div class="img">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/8e4183180538865.650c459d7c3cd.jpg" alt="">
-          </div>
-        </div>
 
 
       </div>
@@ -335,31 +335,31 @@
 
 
 
-<script>
-  // Get references to the loading screen and website content
-  const loadingScreen = document.getElementById('loading-screen');
-  const websiteContent = document.getElementById('website-content');
+  <script>
+    // Get references to the loading screen and website content
+    const loadingScreen = document.getElementById('loading-screen');
+    const websiteContent = document.getElementById('website-content');
 
-  // Delay the content display for 3 seconds (3000 milliseconds)
-  setTimeout(function () {
-    // Hide the loading screen by changing its opacity
-    loadingScreen.style.animation = '2s madhu';
-    // loadingScreen.style.opacity = '0';
-
+    // Delay the content display for 3 seconds (3000 milliseconds)
     setTimeout(function () {
-      loadingScreen.style.display = 'none';
-    }, 2000);
+      // Hide the loading screen by changing its opacity
+      loadingScreen.style.animation = '2s madhu';
+      // loadingScreen.style.opacity = '0';
 
-    // Use a setTimeout to remove the loading screen from the DOM after the transition completes
-     // Wait for the transition (1s in this case) to complete
-    
-    // Show the website content
-    websiteContent.style.display = 'block';
-    websiteContent.style.opacity = '1';
-  }, 3000); // 3000 milliseconds = 3 seconds
-</script>
+      setTimeout(function () {
+        loadingScreen.style.display = 'none';
+      }, 2000);
 
-  
+      // Use a setTimeout to remove the loading screen from the DOM after the transition completes
+      // Wait for the transition (1s in this case) to complete
+
+      // Show the website content
+      websiteContent.style.display = 'block';
+      websiteContent.style.opacity = '1';
+    }, 3000); // 3000 milliseconds = 3 seconds
+  </script>
+
+
   <script>
     // Get a reference to the HTML container
     const container = document.getElementById('lottie-container');
@@ -460,6 +460,24 @@
       }
     });
   </script>
+
+  <script>
+    var elements = document.querySelectorAll('.line');
+    var classNameToAdd = 'active';
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].addEventListener('click', function () {
+        // Remove the class from all elements
+        for (var j = 0; j < elements.length; j++) {
+          elements[j].classList.remove(classNameToAdd);
+        }
+
+        // Add the class to the clicked element
+        this.classList.add(classNameToAdd);
+      });
+    }
+  </script>
+
+
 
 
 
