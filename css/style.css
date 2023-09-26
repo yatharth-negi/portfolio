@@ -135,7 +135,7 @@ nav .right a {
     0% {
 
         height: 100vh;
-        background-color: #fff;
+        background-color: #d3d3d3;
         z-index: 1000;
     }
 
@@ -169,6 +169,7 @@ main .line {
     border-bottom: 1px solid #000;
     position: relative;
     right: 0%;
+    transition: background-color 1s;
     animation: maxi 2s;
 }
 
@@ -201,9 +202,12 @@ main .line .right {
 
 }
 
-main .line:hover .left {
+main .line:hover{
     background-color: #000;
     color: #fff;
+}
+main .line:not(:hover) {
+    background-color: transparent;
 }
 
 main .line .img {
@@ -281,4 +285,9 @@ video {
         opacity: 0;
     }
     
+}
+
+.line.active .img img {
+    display: block;
+    z-index: 9999999999;
 }
